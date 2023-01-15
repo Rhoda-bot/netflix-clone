@@ -1,0 +1,114 @@
+.neflix-logo{
+    width: 36px;
+    height: 10px;
+}
+.banner{
+    background-image:linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8)), url('../../../../public/assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    border-bottom: 8px solid #222;
+    &__wrapper{
+        background-color: transparent;
+        bottom: 0;
+        height: 5rem;
+        left: 0;
+        margin: 0 auto;
+        max-width: 1920px;
+        position: relative;
+        z-index: 10;
+        transition: background-color .5s;
+    }
+    &__header{
+        margin: 0 3.5rem;
+        position: relative;
+        &--logo{
+            width: 200px;
+            align-items: flex-start;
+        }
+        &--links{
+            background-color: #e50914;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: normal;
+            padding: 7px 17px;
+            border: #e50914;
+            border-radius: 3px;
+            color: #fff;
+            margin-top: 0.5rem;
+        }
+    }
+    &__row{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        &--title{
+            font-size: 3.125rem;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+        &--subtitle{
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.3rem;
+        }
+        &--text{
+            font-size: 1.2rem;
+        }
+        &--input{
+            height: 60px;
+            width: 35vw;
+            outline: none;
+            border: none;
+            border-radius: 2px  2px 0;
+            appearance: none;
+            border: 1px solid #8c8c8c;
+            border-radius: 2px;
+            box-sizing: border-box;
+            color: #000;
+            display: block;
+            font-size: 16px;
+            
+        }
+        &--btn{
+            background-color: #e50914;
+            font-size: 1.5rem;
+            padding: 0.5rem 0.9rem;
+            cursor: pointer;
+            line-height: 1;
+            border-radius: 5px 5px;
+            background-image: linear-gradient(180deg,#e50914,#db0510);
+            box-shadow: 0 1px 0 rgb(0 0 0 / 45%);
+            color: #fff;
+            min-height: 60px;
+        }
+        &--btn:hover{
+            background: #f40612;
+            box-shadow: 0 1px 0 rgb(0 0 0 / 45%);
+            text-decoration: none;
+        }
+    }
+
+}
+@media screen and (max-width:600px){
+    .banner{
+        &__row{
+            &--title{
+                font-size: 1.655rem;
+            }
+            &--input{
+                min-height: 30px;
+            }
+            &--btn{
+                min-height: 30px;
+            }
+        }
+    }
+}

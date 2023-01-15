@@ -1,0 +1,27 @@
+accordion-item{
+    outline: transparent !important;
+    border-radius: 5px !important;
+    border: none !important;
+    color: #fff;
+    background-color: #303030 !important;
+    
+}
+
+.accordion-header, .accordion-button{
+    background: transparent !important;
+}
+
+.accordion-button:focus{
+    background: transparent !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.accordion-button::after{
+    content: "\f056" !important;
+    background-image: none !important;
+}
+.faqs{
+    background-color: black;
+    border-bottom: 8px solid #222;
+}

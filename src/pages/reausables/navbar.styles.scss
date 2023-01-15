@@ -1,0 +1,22 @@
+.navigation{
+    bottom: 0;
+    height: 5rem;
+    transition: background-color .5s;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    position: relative;
+    &__header{
+        height: 100%;
+        margin: 0 3.5rem;
+        position: relative;
+        &--logo{
+            fill: #e50914;
+            line-height: normal
+        }
+    }
+}
+.nfLogo .svg-icon-netflix-logo {
+    height: 36px;
+    width: 34px;
+}

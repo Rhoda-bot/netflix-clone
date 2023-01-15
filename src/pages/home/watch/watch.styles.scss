@@ -1,0 +1,35 @@
+.watch{
+    background-color: black;
+    color: white;
+    border-bottom: 8px solid #222;
+    &__row{
+        align-items: center;
+    }
+    &__col{
+        &--title{
+            font-size: 3.125rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        &--subtitle{
+            font-size: 1.625rem;
+            font-weight: 400;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
+        .watch{
+            &__col{
+                &--title{
+                    font-size: 1.525rem;
+                    margin-bottom: 2rem;
+                }
+                &--subtitle{
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
