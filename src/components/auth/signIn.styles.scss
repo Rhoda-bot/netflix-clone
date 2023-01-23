@@ -1,0 +1,122 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,regular,italic,500,700);
+
+.login{
+    background-image:linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8)), url('../../../public/assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 1%;
+    color: #ffffff;
+  &__header{
+    height: 68px;
+    position: relative;
+    background-color: transparent;
+  }
+  &__nav{
+    position: absolute;
+    width: 100%;
+    top: .5rem;
+    &--logo{
+      width: 180px;
+      fill: #e50914;
+      margin-left: 2rem;
+    }
+  }
+  &__bottom{
+    padding: 2rem;
+    &--text{
+      font-size: 12.7px;
+      color: #ccc;
+    }
+    &--span{
+      color: #8c8c8c;
+    }
+    &--bold{
+      font-weight: 400;
+    }
+  }
+  // &__footer{
+  //   background-color:rgba(0,0,0,.75);
+  //   margin: 0;
+  //   left: 0;
+  //   bottom: 0;
+  // }
+  &__col{
+    background-color: rgba(0,0,0,.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 20px 0 30px;
+  }
+  &__form{
+    padding: 2rem;
+    & h1{
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    &--err{
+      color: orangered;
+    }
+    &--element{
+      // background-color: #e50914;
+      position: relative;
+      margin: 0 auto;
+      padding-bottom: 16px;
+    }
+    &--element input{
+      box-sizing: border-box;
+      width: 100%;
+      font-family: inherit;
+      padding: .5rem;
+      height: 50px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background-color: #222;
+      color: #ccc;
+    }
+    &--label{
+      box-sizing: border-box;
+      width: 100%;
+      // position: absolute;
+      // top: 25%;
+      left: 20px;
+      font-size: 13px;
+      cursor: text;
+      color: #8c8c8c;
+      transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
+      transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease,
+        -webkit-transform 0.1s ease, -moz-transform 0.1s ease,
+        -o-transform 0.1s ease;
+    }
+    // input:focus ~ &--label, input:valid ~ &--label{
+    //   font-size: 11px;
+    //   top: 7px;
+    // }
+    &--btn{
+      width: 100%;
+      padding: 10px;
+      background-color: #e50914;
+      border-radius: 4px;
+      border: #e50914;
+      margin-top: 1.4rem;
+      color: #fff;
+    }
+  }
+&__footer{
+    background-color:rgba(0,0,0,.75); 
+    padding: 3rem;
+    margin: 4rem 0;
+    color: #ffffff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+}
+// input:focus ~ .login__form--label,
+// input:valid ~ .login__form--label {
+//   font-size: 11px;
+//   top: 7px;
+// }

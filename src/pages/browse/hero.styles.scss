@@ -1,22 +1,49 @@
 .hero{
-    background: linear-gradient(77deg,rgba(0,0,0,.6),transparent 85%);
-    bottom: 0;
-    left: 0;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     position: relative;
-    background-image: url('../../../public/assets/p.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 5;
-    &__video{
-        // width: 100%;
-        // position: absolute;
-        opacity: .8;
-        z-index: 1;
-    }
+    color: #fff;
+    position: relative;
     &__banner{
-        padding: 2rem;
-        position: relative;
-        justify-content: center;
+        position: absolute;
+        top: 55%;
+        left: 12px;
+        // background-color: red;
+        width: 100%;
+        transform: translate(0%, -45%);
+    }
+    &__col{
+        padding: 1.4rem;
+        // background-color: blue;
+        &--body{
+            margin-top: 1rem;
+        }
+        &--texts{
+            font-size: 1.2rem;
+            line-height: .9rem;
+        }
+        &--btn{
+            padding: .5rem 1rem;
+            border: 0;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        &--info{
+            color: #fff;
+            background-color: rgba(51,51,51,.6);
+        }
+    }
+    &__col2{
+        display: block;
+        &--ratings{
+            background-color: rgba(51,51,51,.6);
+            border: 3px #dcdcdc;
+            border-left-style: solid;
+            box-sizing: border-box;
+            bottom: 0;
+            padding: .3rem 3rem .3rem 1.2rem;
+        }
     }
 }   

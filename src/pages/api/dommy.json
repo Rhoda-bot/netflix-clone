@@ -18,7 +18,7 @@
         "title": "Nabor Kim",
         "movie": "/assets/videos/v3.mp4",
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ",
-        "image": "assets/t4.png"
+        "image": "/assets/t4.png"
     },
     {
         "id": 4,

@@ -1,4 +1,4 @@
-export type inputVals ={
-    username: string,
-    
-}
+export type INPUTVAL = {
+  username: string,
+
+};

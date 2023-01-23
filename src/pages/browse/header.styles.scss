@@ -1,52 +1,46 @@
 .header{
 font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
-position: static;
-background-color: #222;
+position: fixed;
+background-color: transparent;
 color: #fff;
-&__nav{
-    background-color: transparent;
-    color: #fff;
-    &--logo{
-        width: 100px;
-    }
-
+width: 100%;
+// background-image: linear-gradient(180deg,rgba(0,0,0,.4) 10%,transparent);
+&--image {
+    width: 8rem;
 }
-// color: #fff;
-    // height: 70px;
-    // &__container{
-    //     left: 0;
-    //     position: relative;
-    //     right: 0;
-    //     z-index: 1;
-    //     top: 0;
-    //     background-color: transparent;
-    // }
-    // &__main{
-    //     background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
-    //     align-items: center;
-    //     display: flex;
-    //     font-size: 1.2rem;
-    //     padding: 0 5%;
-    //     position: relative;
-    //     transition: background-color .4s;
-    //     margin-bottom: 20px;
-    //     z-index: 2;
-    // }
-    // &__menu{
-    //     height: 68px;
-    // }
-    // .navigation{
-    //     &__logo{
-    //         width: 150px;
-    //     }
-    //     &__menu{
-    //         display: flex;
-    //         align-items: center;
-    //         &--list{
-    //             display: block;
-    //             margin-left: 20px;
-    //             margin-bottom: 1.3rem;
-    //         }
-    //     }
-    // }
+&__menu {
+    & li a{
+     color: #fff !important;
+    }
+}
+&__form {
+    position: relative;
+    &--input {
+        color: #fff;
+        // background-color: rgba(0, 0, 0, 0.651);
+        background-color: transparent;
+        border-radius: 0;
+        // border: 1px solid #fff;
+        width: 10px;
+        border: 0px solid #fff;
+        padding: 5px 5px 5px 30px;
+        transition: ease-in-out .5s;
+        &:focus {
+            background-color: rgba(0, 0, 0, 0.651);
+            border: 1px solid #fff;
+            color: #fff;
+            width: 220px;
+
+        }
+    }
+    &--search {
+        position: absolute;
+        top: 50%;
+        transform: translate(0,-50%);
+        left: 10px;
+        pointer-events: none;
+        cursor: pointer;
+
+    }
+}
 }

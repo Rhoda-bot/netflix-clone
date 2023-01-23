@@ -8,18 +8,18 @@ import EnjoySection from './enjoy/enjoy';
 import KidsSection from './kids/kids';
 import WatchSection from './watch/watch';
 
-const HomePage: React.FC = () => {
-    return (
-        <>
-         <BannerSection />
-         <EnjoySection />
-         <DownloadSection />
-         <WatchSection />
-         <KidsSection />
-         <Faqs />
-         <Footer />
-        </>
-    )
+function HomePage() {
+  return (
+    <>
+      <BannerSection />
+      <EnjoySection />
+      <DownloadSection />
+      <WatchSection />
+      <KidsSection />
+      <Faqs />
+      <Footer />
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;

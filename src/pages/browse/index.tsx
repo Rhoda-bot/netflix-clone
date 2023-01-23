@@ -1,12 +1,18 @@
-import Header from "./header";
-import Hero from "./hero";
+import Bar from '../reausables/bar';
+import CardSlider from '../reausables/cardSliders';
+import Header from './header';
+import Hero from './hero';
+import HeroBanner from './heroBanner';
 
-const Browse = () =>{
-    return(
-        <>
-            <Header />
-            <Hero />
-         </>
-    )
+function Browse() {
+  return (
+    <>
+      {/* <Bar /> */}
+      {/* <Header /> */}
+      {/* <HeroBanner /> */}
+      {/* <CardSlider /> */}
+      <Hero />
+    </>
+  );
 }
 export default Browse;

@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { MOVIEDETAILS } from '../interface';
 
-const requestData = async (data?: any, url?: any) => {
+export const requestData = async (data?: string, url?: any) => {
   const result = await axios
     .post(url, data, {
       headers: {
@@ -13,4 +14,9 @@ const requestData = async (data?: any, url?: any) => {
   return result;
 };
 
-export default requestData;
+export const getApiData = async (url: string) => {
+  const result = await axios.get(url)
+    .then((response) => response)
+    .catch((error) => error.response);
+  return result;
+};

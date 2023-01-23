@@ -7,6 +7,7 @@ const Signup = () => {
         password: ''
       }
       const [inputValue, setInputValues] = useState(initials);
+      const [errors, setErrors] = useState<any>({});
       useEffect(() =>{
         axios.get('authentication/token/new?api_key=a495d3cd0cf478c71fd3590344b481b9').then(res => {  
         if (res.data.success) {
@@ -15,17 +16,28 @@ const Signup = () => {
         }
         })
       }, [])
+      const isEmail = (email: string) =>
+      /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
       const handleInput =  (e: any) =>{
         const {name, value} = e.target;
         setInputValues({...inputValue, [name]:value})
       }
       const handleSubmit = async () => {
         const { email, password } = inputValue;
+        const errors = {errorMail: ''};
+ 
+        if (!isEmail(email)) {
+        errors.errorMail = "Wrong email";
+        }
+        setErrors({errors});
+        if (!Object.keys(errors).length) {
+            alert(JSON.stringify(inputValue, null, 2));
+          }
         const getToken = JSON.stringify(localStorage.getItem('token'));
         const newToken = getToken.toString().slice(1, 41);
-        axios.post("authentication/token/validate_with_login?api_key=a495d3cd0cf478c71fd3590344b481b9", {email, password, getToken}).then(res => {
-          console.log(res.data);   
-        });
+        // axios.post("authentication/token/validate_with_login?api_key=a495d3cd0cf478c71fd3590344b481b9", {email, password, getToken}).then(res => {
+        //   console.log(res.data);   
+        // });
       }
       const { email, password } = inputValue;
     return (
@@ -46,11 +58,20 @@ const Signup = () => {
                                 <form className='mt-4'>
                                     <div className="row">
                                         <div className="mb-3">
-                                            <input type="text" value={email} onChange={handleInput} className='form-control signup__form--input' placeholder='Email address'/>
+                                            <input type="text" name='email' value={email} onChange={handleInput} className='form-control signup__form--input' placeholder='Email address'/>
                                             <label className="signup__form--label" htmlFor="username">Email or Phone Number</label>
-                                        </div>
+                                            <div>{errors && errors.errorMail}</div>
+                                            {Object.entries(errors).map(([key, error]) => (
+                                                    <span key={`${key}: ${error}`} style={{
+                                                        fontWeight: "bold",
+                                                        color: "red"
+                                                    }}>
+                                                        {key}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         <div className="mb-3">
-                                            <input type="text" value={password} onChange={handleInput} className='form-control signup__form--input' placeholder='Password'/>
+                                            <input type="text" name='password' value={password} onChange={handleInput} className='form-control signup__form--input' placeholder='Password'/>
                                         </div>
                                         <div className="mb-3">
                                         <input type="button" value="sign in" className='border-0 signup__form--btn'  onClick={handleSubmit}/>
