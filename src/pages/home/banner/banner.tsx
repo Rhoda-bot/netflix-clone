@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './banner.styles.scss';
 
 function BannerSection() {
@@ -9,7 +10,9 @@ function BannerSection() {
             <img src="../assets/logo.png" className="banner__header--logo navbar-brand" alt="" />
             <form className="d-flex" role="search">
 
-              <button className="banner__header--links" type="submit">Sing In</button>
+              <button className="banner__header--links" type="submit">
+                <NavLink to="/auth/signin">Sing In</NavLink>
+              </button>
             </form>
           </div>
         </nav>

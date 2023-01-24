@@ -1,9 +1,7 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './hero.styles.scss';
 import Slider from 'react-slick';
 import Header from './header';
-import TestMovies from '../api/dommy.json';
 import { getApiData } from '../api/api';
 import { MOVIEDETAILS } from '../interface';
 
@@ -24,7 +22,8 @@ function Hero() {
     const apiFunc = async () => {
       const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
       setGetOneMovie(result.results[12]);
-      return result.results[12].backdrop_path;
+      setApiMovies(result.results);
+      return result;
     };
     console.log(apiFunc());
   }, []);
@@ -35,16 +34,16 @@ function Hero() {
         className="hero"
         style={{
           backgroundColor: 'yellowgreen',
-          backgroundImage: `url(https://image.tmdb.org/t/p/original${getOneMovie.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${getOneMovie?.backdrop_path})`,
         }}
       >
         <Header />
         <div className="container">
           <div className="row align-items-center justify-content-center  hero__banner">
             <div className="col-md-6 hero__col">
-              <h1>{getOneMovie.title}</h1>
+              <h1>{getOneMovie?.title}</h1>
               <div className="hero__col--body">
-                <p className="hero__col--text">{getOneMovie.overview}</p>
+                <p className="hero__col--text">{getOneMovie?.overview}</p>
                 <div className="d-flex">
                   <button type="button" className="hero__col--btn me-2">
                     <i className="fa-regular fa-bell m-2" />
@@ -59,7 +58,7 @@ function Hero() {
 
             </div>
             <div className="col-md-6 align-items-center justify-content-center hero__col2">
-              <div className="hero__col2--ratings float-end my-5">18+</div>
+              <div className="hero__col2--ratings float-end my-5 ">18+</div>
             </div>
           </div>
         </div>

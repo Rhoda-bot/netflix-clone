@@ -4,11 +4,11 @@ position: fixed;
 background-color: transparent;
 color: #fff;
 width: 100%;
-// background-image: linear-gradient(180deg,rgba(0,0,0,.4) 10%,transparent);
 &--image {
     width: 6rem;
 }
 &__menu {
+    // background-color: red;
     & li a{
      color: #fff !important;
     }

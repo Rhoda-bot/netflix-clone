@@ -4,7 +4,7 @@ import './header.styles.scss';
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg header  py-0 bg-dark">
-      <div className="container-fluid ">
+      <div className="container mx-3">
         <NavLink className="navbar-brand" to="/home"><img src="../assets/logoo.png" className="navigation__logo img-fluid header--image" alt="" /></NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
@@ -28,7 +28,7 @@ function Header() {
             </li>
 
           </ul>
-          <form className="d-flex header__form " role="search">
+          <form className="d-flex header__form" role="search">
             <input className="form-control me-2 shadow-none header__form--input" type="search" placeholder="Titles, people, genres" aria-label="Search" />
             <i className="fa-solid fa-magnifying-glass header__form--search" />
           </form>
@@ -41,14 +41,16 @@ function Header() {
             </NavLink>
           </li>
           <li className="nav-item dropdown mx-2">
-            <NavLink className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+            <NavLink className="nav-link dropdown-toggle pe-2" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/assets/avar.jpg" width={20} height={21} alt="avar" />
             </NavLink>
-            <ul className="dropdown-menu">
-              <li><NavLink className="dropdown-item" to="/">Action</NavLink></li>
-              <li><NavLink className="dropdown-item" to="/">Another action</NavLink></li>
+            <ul className="dropdown-menu drop-menu-end py-2">
+              <li><NavLink className="dropdown-item" to="#">Manage Profiles</NavLink></li>
+              <li><NavLink className="dropdown-item" to="#">Transfer Profiles</NavLink></li>
+              <li><NavLink className="dropdown-item" to="#">Accounct</NavLink></li>
+              <li><NavLink className="dropdown-item" to="#">Help center</NavLink></li>
               <li><hr className="dropdown-divider" /></li>
-              <li><NavLink className="dropdown-item" to="/">Something else here</NavLink></li>
+              <li><NavLink className="dropdown-item" to="#">Signout of Netflix</NavLink></li>
             </ul>
           </li>
         </div>
