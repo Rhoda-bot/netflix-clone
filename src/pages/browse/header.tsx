@@ -4,7 +4,7 @@ import './header.styles.scss';
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg header  py-0 bg-dark">
-      <div className="container mx-3">
+      <div className="container-fluid mx-5">
         <NavLink className="navbar-brand" to="/home"><img src="../assets/logoo.png" className="navigation__logo img-fluid header--image" alt="" /></NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />

@@ -4,8 +4,9 @@ import Slider from 'react-slick';
 import Header from './header';
 import { getApiData } from '../api/api';
 import { MOVIEDETAILS } from '../interface';
+import ViewMoreMovieDescription from './modals/modalView';
 
-function Hero() {
+function Hero(props:MOVIEDETAILS) {
   const [apiMovies, setApiMovies] = useState<Array<MOVIEDETAILS | null>>([]);
   const [getOneMovie, setGetOneMovie] = useState<any>();
   const settings = {
@@ -20,8 +21,8 @@ function Hero() {
   };
   useEffect(() => {
     const apiFunc = async () => {
-      const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
-      setGetOneMovie(result.results[12]);
+      const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&?page=2');
+      setGetOneMovie(result.results[10]);
       setApiMovies(result.results);
       return result;
     };
@@ -46,10 +47,10 @@ function Hero() {
                 <p className="hero__col--text">{getOneMovie?.overview}</p>
                 <div className="d-flex">
                   <button type="button" className="hero__col--btn me-2">
-                    <i className="fa-regular fa-bell m-2" />
+                    <i className="fa-regular fa-play m-2" />
                     Play
                   </button>
-                  <button type="button" className="hero__col--btn me-2 hero__col--info">
+                  <button type="button" className="hero__col--btn me-2 hero__col--info" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i className="fa-light fa-circle-info m-2" />
                     More info
                   </button>
@@ -63,7 +64,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      {/* <ViewMoreMovieDescription /> */}
+      <ViewMoreMovieDescription props={getOneMovie} />
     </>
   );
 }
