@@ -28,7 +28,6 @@ function Hero() {
     };
     console.log(apiFunc());
   }, []);
-  console.log(getOneMovie.backdrop_path);
 
   return (
     <>
@@ -48,7 +47,7 @@ function Hero() {
                 <p className="hero__col--text">{getOneMovie.overview}</p>
                 <div className="d-flex">
                   <button type="button" className="hero__col--btn me-2">
-                    <i className="fa-regular fa-bell" />
+                    <i className="fa-regular fa-bell m-2" />
                     Play
                   </button>
                   <button type="button" className="hero__col--btn me-2 hero__col--info">
@@ -60,7 +59,7 @@ function Hero() {
 
             </div>
             <div className="col-md-6 align-items-center justify-content-center hero__col2">
-              <div className="hero__col2--ratings float-end my-4">18+</div>
+              <div className="hero__col2--ratings float-end my-5">18+</div>
             </div>
           </div>
         </div>
