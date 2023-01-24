@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { MOVIEDETAILS } from '../interface';
 
 export const requestData = async (data?: any, url?: any) => {
   const result = await axios
@@ -16,7 +15,7 @@ export const requestData = async (data?: any, url?: any) => {
 
 export const getApiData = async (url: string) => {
   const result = await axios.get(url)
-    .then((response) => response)
+    .then((response) => response.data)
     .catch((error) => error.response);
   return result;
 };

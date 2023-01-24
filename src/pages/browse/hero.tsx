@@ -9,7 +9,7 @@ import { MOVIEDETAILS } from '../interface';
 
 function Hero() {
   const [apiMovies, setApiMovies] = useState<Array<MOVIEDETAILS | null>>([]);
-  // const [getMovie, setGetMovie] = useState(test);
+  const [getOneMovie, setGetOneMovie] = useState<any>();
   const settings = {
     className: 'center',
     infinite: true,
@@ -23,7 +23,8 @@ function Hero() {
   useEffect(() => {
     const apiFunc = async () => {
       const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
-      return result;
+      setGetOneMovie(result.results[12]);
+      return result.results[12].backdrop_path;
     };
     console.log(apiFunc());
   }, []);
@@ -34,7 +35,7 @@ function Hero() {
         className="hero"
         style={{
           backgroundColor: 'yellowgreen',
-          // backgroundImage: `url(https://tmdb.org/${getMovie.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${getOneMovie.backdrop_path})`,
         }}
       >
         <Header />
