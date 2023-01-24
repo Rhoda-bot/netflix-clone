@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import { ROUTES } from './resources/routes-constants';
+import ROUTES from './resources/routes-constants';
 import SignIn from './components/auth/signIn';
 import Signup from './components/auth/signup';
 import 'bootstrap/dist/css/bootstrap.css';

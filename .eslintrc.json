@@ -44,8 +44,12 @@
                 "specialLink": ["hrefLeft", "hrefRight"],
                 "aspects": ["noHref", "invalidHref", "preferButton"]
             }
-        ],
-        "ignoreVoid": true
+        ]
+        // "ignoreVoid": true,
+        // "@typescript-eslint/explicit-member-accessibility": 0,
+        // "@typescript-eslint/member-delimiter-style": 0,
+        // "@typescript-eslint/no-empty-function": 0,
+        // "@typescript-eslint/no-explicit-any": 0
       
     }
 

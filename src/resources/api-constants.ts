@@ -1,5 +1,4 @@
-const baseUrl = 'http://exampleurl'
+const baseUrl = 'http://exampleurl';
 
-export const getData = (userId: number): string => {
-    return baseUrl + '/data/' + userId
-}
+const getData = (userId: number): string => `${baseUrl}/data/${userId}`;
+export default getData;

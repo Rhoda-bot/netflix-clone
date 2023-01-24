@@ -3,4 +3,4 @@ export interface MOVIEDETAILS {
   title?: string,
   overview?: string,
   backrop_path?: string
-  }
+}

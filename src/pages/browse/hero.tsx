@@ -21,8 +21,11 @@ function Hero() {
     },
   };
   useEffect(() => {
-    const result = getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
-    console.log(result);
+    const apiFunc = async () => {
+      const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
+      return result;
+    };
+    console.log(apiFunc());
   }, []);
 
   return (
@@ -55,7 +58,7 @@ function Hero() {
 
             </div>
             <div className="col-md-6 align-items-center justify-content-center hero__col2">
-              <div className="hero__col2--ratings float-end">18+</div>
+              <div className="hero__col2--ratings float-end my-4">18+</div>
             </div>
           </div>
         </div>

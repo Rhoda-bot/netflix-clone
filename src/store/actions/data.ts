@@ -1,12 +1,10 @@
-import { ReduxAction } from '../../types/reducers'
+import { ReduxAction } from '../../types/reducers';
 
-export enum DATA_ACTIONS {
-    SET_CONTENTS = 'dataActions/setContents'
+export enum DATAACTIONS {
+  SET_CONTENTS = 'dataActions/setContents',
 }
 
-export const setDataContents: ReduxAction<string[]> = (contents) => {
-    return {
-        type: DATA_ACTIONS.SET_CONTENTS,
-        payload: contents
-    }
-}
+export const setDataContents: ReduxAction<string[]> = (contents) => ({
+  type: DATAACTIONS.SET_CONTENTS,
+  payload: contents,
+});
