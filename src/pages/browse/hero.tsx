@@ -1,35 +1,10 @@
-import { useEffect, useState } from 'react';
 import './hero.styles.scss';
-import Slider from 'react-slick';
 import Header from './header';
-import { getApiData } from '../api/api';
-import { MOVIEDETAILS } from '../interface';
 import ViewMoreMovieDescription from './modals/modalView';
-import SlidingSlides from './sliders/sliders';
 import Modals from './modals/modal';
 
-function Hero(props:MOVIEDETAILS) {
-  const [apiMovies, setApiMovies] = useState<Array<MOVIEDETAILS | null>>([]);
-  const [getOneMovie, setGetOneMovie] = useState<any>();
-  const settings = {
-    className: 'center',
-    infinite: true,
-    centerPadding: '60px',
-    slidesToShow: 5,
-    swipeToSlide: true,
-    afterChange(index:number) {
-      return `Slider Changed to: ${index + 1}, background: #222; color: #bada55`;
-    },
-  };
-  useEffect(() => {
-    const apiFunc = async () => {
-      const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&?page=2');
-      setGetOneMovie(result.results[14]);
-      setApiMovies(result.results);
-      return result;
-    };
-    console.log(apiFunc());
-  }, []);
+function Hero({ data }: any) {
+  console.log(data);
 
   return (
     <>
@@ -37,16 +12,16 @@ function Hero(props:MOVIEDETAILS) {
         className="hero"
         style={{
           backgroundColor: 'yellowgreen',
-          backgroundImage: `url(https://image.tmdb.org/t/p/original${getOneMovie?.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${data[9]?.backdrop_path})`,
         }}
       >
         <Header />
         <div className="container">
           <div className="row align-items-center justify-content-center  hero__banner">
             <div className="col-md-6 hero__col">
-              <h1>{getOneMovie?.title}</h1>
+              <h1>{data[9]?.title}</h1>
               <div className="hero__col--body">
-                <p className="hero__col--text">{getOneMovie?.overview}</p>
+                <p className="hero__col--text">{data[9]?.overview}</p>
                 <div className="d-flex">
                   <button type="button" className="hero__col--btn me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i className="fa-regular fa-play m-2" />
@@ -66,9 +41,8 @@ function Hero(props:MOVIEDETAILS) {
           </div>
         </div>
       </div>
-      <ViewMoreMovieDescription props={apiMovies} />
+      <ViewMoreMovieDescription props={data} />
       <Modals />
-      <SlidingSlides />
     </>
   );
 }

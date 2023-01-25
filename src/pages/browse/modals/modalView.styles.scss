@@ -111,6 +111,24 @@
           width: 100%;
           height: 100px;
         }
+        &--close {
+          background-color: #000;
+          border-radius: 50px;
+          padding: 15px;
+          margin: 20px;
+          top: 15px !important;
+          right: 15px !important;
+          width: 2.5rem !important;
+          height: 2.5rem !important;
+          border: 2px solid transparent;
+          &:focus {
+            border: 2px solid #fff;
+          }
+    
+          i {
+            color: #fff;
+          }
+        }
     }
     &__controls {
       margin: 20px auto;
@@ -134,5 +152,8 @@
           color: grey;
         }
       }
+    }
+    &__more{
+      padding: 2rem;
     }
 }

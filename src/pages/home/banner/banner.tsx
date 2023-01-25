@@ -11,7 +11,7 @@ function BannerSection() {
             <form className="d-flex" role="search">
 
               <button className="banner__header--links" type="submit">
-                <NavLink to="/auth/signin">Sing In</NavLink>
+                <NavLink to="/auth/signin">Sign In</NavLink>
               </button>
             </form>
           </div>

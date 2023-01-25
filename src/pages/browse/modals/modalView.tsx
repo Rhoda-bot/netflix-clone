@@ -11,7 +11,7 @@ function ViewMoreMovieDescription({ props }: any) {
             className="modal-header border-0 modal__header align-items-end pb-4"
             style={{
               backgroundImage: `linear-gradient(0deg,#aaa, transparent 100%),
-              url(https://image.tmdb.org/t/p/original${props[14]?.backdrop_path}`,
+              url(https://image.tmdb.org/t/p/original${props[9]?.backdrop_path}`,
               // backgroundColor: 'yellowgreen',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
@@ -19,7 +19,7 @@ function ViewMoreMovieDescription({ props }: any) {
             }}
           >
             <div className="modal__header--content px-3 px-lg-4">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{props[14]?.title}</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">{props[9]?.title}</h1>
             </div>
 
             <button type="button" className="btn-close modal__header--close shadow-none" data-bs-dismiss="modal" aria-label="Close">
@@ -76,7 +76,7 @@ function ViewMoreMovieDescription({ props }: any) {
               <div className="col-md-6">
                 <div className="d-flex mb-2 mb-lg-3">
                   <div className="mx-1 fw-bold">
-                    {props[14]?.release_date}
+                    {props[9]?.release_date}
                   </div>
                   <div className="mx-1 modal__details--ratings px-2 ">
                     18+
@@ -85,7 +85,7 @@ function ViewMoreMovieDescription({ props }: any) {
                   <div className="mx-1 modal__details--ratings px-2">HD</div>
                 </div>
                 <div className="d-flex mb-2 mb-lg-3">
-                  <p className="mb-0">{props[14]?.overview}</p>
+                  <p className="mb-0">{props[9]?.overview}</p>
                 </div>
               </div>
               <div className="col-md-6">
@@ -110,7 +110,7 @@ function ViewMoreMovieDescription({ props }: any) {
                     <p className="mb-2 mb-lg-3 modal__details--info">
                       <span>Vote Average:</span>
                       {' '}
-                      {props[14]?.vote_average}
+                      {props[9]?.vote_average}
                     </p>
                   </div>
                   <div className="col">
@@ -118,7 +118,7 @@ function ViewMoreMovieDescription({ props }: any) {
                     <p className="mb-2 mb-lg-3 modal__details--info">
                       <span>Vote count:</span>
                       {' '}
-                      {props[14]?.vote_count}
+                      {props[9]?.vote_count}
                     </p>
                   </div>
                 </div>
@@ -131,19 +131,50 @@ function ViewMoreMovieDescription({ props }: any) {
             </div>
             <div className="row">
               {
-                props.map((items: any) => (
-                  <div className="col-md-6" key={items.id}>
-                    <Cards item={items} />
-                  </div>
-                ))
+              props && props.filter((elts:any, index:number) => index < 6).map((items: any) => (
+                <div className="col-md-4 p-2" key={items.id}>
+                  <Cards item={items} />
+                </div>
+              ))
               }
             </div>
           </div>
-          {/* <div className="modal-footer">
-            <button type="button" className="btn btn-secondary"
-             data-bs-dismiss="modal">Close</button>
-            <button type="button" className="btn btn-primary">Save changes</button>
-          </div> */}
+          <div className="modal-footer">
+            <div className="modal__about">
+              <div className="modal__more--header py-2 mt-2 mt-lg-3">
+                <h6>
+                  About
+                  {' '}
+                  {props[9]?.title}
+                  {' '}
+                </h6>
+              </div>
+              <div className="">
+                <p className="mb-0 mb-lg-3 modal__details--info">
+                  <span>Creators:</span>
+                  {' '}
+                  Steven Seagal, Micheal B. Jordan,
+                  Jamie Foxx, Denzel Washington, more
+                </p>
+                <p className="mb-0 mb-lg-3 modal__details--info">
+                  <span>Cast:</span>
+                  {' '}
+                  Steven Seagal, Micheal B. Jordan, Jamie
+                  Foxx, Denzel Washington, more
+                </p>
+                <p className="mb-0 mb-lg-3 modal__details--info">
+                  <span>Genre:</span>
+                  {' '}
+                  Movies, Action & Adventure
+                </p>
+                <p className="mb-0 mb-lg-3 modal__details--info">
+                  <span>This movie is:</span>
+                  {' '}
+                  Violent, Suspensful, Exciting
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 /* eslint-disable react/destructuring-assignment */
 function Cards(items:any) {
-  const { overview, title } = items;
+  const { overview } = items.item;
   return (
     <div className="card border-0 modal__card position-relative">
       <img
-        src={(items?.backdrop_path === null) ? '' : `https://image.tmdb.org/t/p/original${items?.backdrop_path}`}
+        src={(items.item?.backdrop_path === null) ? '' : `https://image.tmdb.org/t/p/original${items.item?.backdrop_path}`}
         alt="images"
         className="card-img-top"
         width={180}
@@ -29,7 +29,7 @@ function Cards(items:any) {
                 18+
               </div>
               <div className="mx-1 fw-bold modal__card--year">
-                <p>hdhdhdhhd</p>
+                <p>{items.item.release_date}</p>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ function Cards(items:any) {
             </button>
           </div>
         </div>
-        <p className="card-text py-2">hchhc</p>
+        <p className="card-text py-2">{overview}</p>
       </div>
     </div>
   );
