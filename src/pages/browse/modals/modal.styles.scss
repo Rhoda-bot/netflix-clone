@@ -1,0 +1,17 @@
+.modal{
+    color: black;
+    &__background{
+       background-color: plum;
+    }
+    &__header{
+        color: #222;
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+        background-image: url('../../../../public/assets/p.webp');
+    }
+    &__control{
+        margin: 20px auto;
+    }
+}

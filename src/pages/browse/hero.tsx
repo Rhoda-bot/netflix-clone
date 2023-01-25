@@ -5,6 +5,8 @@ import Header from './header';
 import { getApiData } from '../api/api';
 import { MOVIEDETAILS } from '../interface';
 import ViewMoreMovieDescription from './modals/modalView';
+import SlidingSlides from './sliders/sliders';
+import Modals from './modals/modal';
 
 function Hero(props:MOVIEDETAILS) {
   const [apiMovies, setApiMovies] = useState<Array<MOVIEDETAILS | null>>([]);
@@ -22,7 +24,7 @@ function Hero(props:MOVIEDETAILS) {
   useEffect(() => {
     const apiFunc = async () => {
       const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&?page=2');
-      setGetOneMovie(result.results[10]);
+      setGetOneMovie(result.results[14]);
       setApiMovies(result.results);
       return result;
     };
@@ -46,7 +48,7 @@ function Hero(props:MOVIEDETAILS) {
               <div className="hero__col--body">
                 <p className="hero__col--text">{getOneMovie?.overview}</p>
                 <div className="d-flex">
-                  <button type="button" className="hero__col--btn me-2">
+                  <button type="button" className="hero__col--btn me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i className="fa-regular fa-play m-2" />
                     Play
                   </button>
@@ -64,7 +66,9 @@ function Hero(props:MOVIEDETAILS) {
           </div>
         </div>
       </div>
-      <ViewMoreMovieDescription props={getOneMovie} />
+      <ViewMoreMovieDescription props={apiMovies} />
+      <Modals />
+      <SlidingSlides />
     </>
   );
 }

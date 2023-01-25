@@ -1,4 +1,4 @@
-function SlidingSlides() {
+function SlidingSlides(props: any) {
   return (
     <h1>Slides</h1>
   );
