@@ -21,6 +21,15 @@ function Cards(items:any) {
       <div className="card-body modal__card--body p-2 p-lg-3 h-100">
         <div className="row align-items-center">
           <div className="col">
+            <div className="modal__card--body-match">84% Match</div>
+            <div className="modal__card--body-date">2022</div>
+          </div>
+          <div className="col">
+            <button type="button" className="modal__card--body-btn">
+              <i className="fa-regular fa-plus fa-inverse" />
+            </button>
+          </div>
+          {/* <div className="col">
             <p className="card-title fw-bold m-0 modal__card--percentage ">
               84% Match
             </p>
@@ -43,9 +52,9 @@ function Cards(items:any) {
             >
               <i className="fa-regular fa-plus fa-inverse" />
             </button>
-          </div>
+          </div> */}
         </div>
-        <p className="card-text py-2">{overview}</p>
+        <p className="card-text py-2 modal__card--text">{overview}</p>
       </div>
     </div>
   );

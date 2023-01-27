@@ -52,9 +52,12 @@ function SlidingSlides({ data }: any) {
                 <h4>Swipe To Slide</h4>
                 <div className="mx-3 align-items-center mt-1">
                   {' '}
-                  <b className="sliding--explore">Explore All</b>
+                  <b className="sliding--explore">
+                    Explore All
+                    {' '}
+                    <span className="sliding--chevron"><i className="fa-solid fa-chevron-right" /></span>
+                  </b>
                   {' '}
-                  <span className="sliding--chevron"><i className="fa-solid fa-chevron-right" /></span>
 
                 </div>
               </div>

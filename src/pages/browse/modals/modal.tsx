@@ -64,34 +64,34 @@ function Modals({ props }: any) {
           </div>
           <div className="modal-body">
             <div className="modal__description">
-              <div className="container">
+              <div className="container align-items-center justify-content-center">
                 <div className="row">
                   <div className="col-md-7 align-items-center">
                     <div className="mx-1 fw-bold mb-3">
                       83% Match
                       {' '}
-                      <div className="mx-1 fw-bold">
+                      <span className="mx-1 fw-bold">
                         {props[9]?.release_date}
-                      </div>
+                      </span>
                       <b>18+</b>
                     </div>
-                    <p>
+                    <p className="modal__description--text">
                       {props[9]?.overview}
                     </p>
                   </div>
-                  <div className="col-md-5 align-items-center">
-                    <p className="mb-2 mb-lg-3">
+                  <div className="col-md-5 align-items-center mt-2">
+                    <p className="mb-2 mb-lg-3 modal__description--text">
                       <span>Cast:</span>
                       {' '}
                       Queen Ramonda, M’Baku. Okoye,
                       Dora Milaje, T’Challa Washington, more
                     </p>
-                    <p className="mb-2 mb-lg-3">
+                    <p className="mb-2 mb-lg-3 modal__description--text">
                       <span>Genre:</span>
                       {' '}
                       Movies, Action & Adventure
                     </p>
-                    <p className="mb-2 mb-lg-3">
+                    <p className="mb-2 mb-lg-3 modal__description--text">
                       <span>This movie is:</span>
                       {' '}
                       Violent, Suspensful, Exciting
@@ -115,7 +115,7 @@ function Modals({ props }: any) {
               </div>
             </div>
           </div>
-          <div className="modal-footer border-bottom-none">
+          <div className="modal-footer">
             <div className="modal__about">
               <div className="modal__more--header py-2 mt-2 mt-lg-3">
                 <h6>
@@ -126,19 +126,19 @@ function Modals({ props }: any) {
                 </h6>
               </div>
               <div className="">
-                <p className="mb-0 mb-lg-3 modal__details--info">
+                <p className="mb-0 mb-lg-3 modal__descriptionn--text">
                   <span>Creators:</span>
                   {' '}
                   Steven Seagal, Micheal B. Jordan,
                   Jamie Foxx, Denzel Washington, more
                 </p>
-                <p className="mb-0 mb-lg-3 modal__details--info">
+                <p className="mb-0 mb-lg-3 modal__descriptionn--text">
                   <span>Cast:</span>
                   {' '}
                   Steven Seagal, Micheal B. Jordan, Jamie
                   Foxx, Denzel Washington, more
                 </p>
-                <p className="mb-0 mb-lg-3 modal__details--info">
+                <p className="mb-0 mb-lg-3 modal__descriptionn--text">
                   <span>Genre:</span>
                   {' '}
                   Movies, Action & Adventure
