@@ -18,11 +18,14 @@
             margin: 20px;
             top: 15px;
             right: 15px;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2rem;
+            height: 2rem;
             border: 2px solid transparent;
-            &:focus {
-              border: 2px solid #fff;
+            color: #fff;
+            &:hover {
+                color: #fff;
+                border: 2px solid #000;
+                background-color: #000;
             }
         }
         &--overlay {

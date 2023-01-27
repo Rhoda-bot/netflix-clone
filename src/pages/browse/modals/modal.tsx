@@ -20,7 +20,9 @@ function Modals({ props }: any) {
             >
 
               <div className="modal-header border-bottom-none">
-                <button type="button" className="btn-close modal__header--close shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                <button type="button" className="btn-close modal__header--close shadow-none" data-bs-dismiss="modal" aria-label="Close">
+                  <i className="fa-solid fa-xmark" />
+                </button>
               </div>
             </div>
           </div>
@@ -51,9 +53,9 @@ function Modals({ props }: any) {
                 <div className="col-md-2 modal__media--col">
                   {/* <div className="d-flex"> */}
                   <button type="button" className="modal__media--icon me-2">
-                    <div className="d-flex">
-                      <i className="fa-thin fa-volume-xmark" />
-                    </div>
+                    {/* <div className="d-flex"> */}
+                    <i className="fa-thin fa-volume-xmark" />
+                    {/* </div> */}
                   </button>
                   {/* </div> */}
                 </div>
