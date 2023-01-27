@@ -11,7 +11,7 @@ function ViewMoreMovieDescription({ props }: any) {
             className="modal-header border-0 modal__header align-items-end pb-4"
             style={{
               backgroundImage: `linear-gradient(0deg,#aaa, transparent 100%),
-              url(https://image.tmdb.org/t/p/original${props[9]?.backdrop_path}`,
+              url(https://image.tmdb.org/t/p/original${props[14]?.backdrop_path}`,
               // backgroundColor: 'yellowgreen',
               backgroundSize: 'cover',
               backgroundPosition: 'center center',

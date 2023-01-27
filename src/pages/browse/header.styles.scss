@@ -2,8 +2,9 @@
 font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
 position: fixed;
 background-color: transparent;
-color: #fff;
+color: #ffffff;
 width: 100%;
+z-index: 2;
 &--image {
     width: 6rem;
 }

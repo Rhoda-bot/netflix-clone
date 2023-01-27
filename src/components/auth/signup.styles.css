@@ -1,0 +1,77 @@
+.wrapper {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0, transparent 60%, rgba(0, 0, 0, 0.8)), url("../../../public/assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.wrapper .signup {
+  position: relative;
+  height: 78px;
+  width: 100%;
+}
+.wrapper .signup__nav {
+  position: absolute;
+  width: 93%;
+  height: 50px;
+  left: 2%;
+  top: 15%;
+  padding: 1rem;
+}
+.wrapper .signup__nav--logo {
+  width: 180px;
+  fill: #e50914;
+}
+.wrapper .signup__hero {
+  position: relative;
+  width: 100%;
+  top: 10%;
+}
+.wrapper .signup__form {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 2.5rem;
+  margin: auto 3;
+  color: #fff;
+}
+.wrapper .signup__form--input {
+  background-color: #222;
+  border: #222;
+  height: 48px;
+  font-size: 16px;
+  color: #000;
+  width: 100%;
+}
+.wrapper .signup__form--label {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  top: 25%;
+  cursor: text;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
+}
+.wrapper .signup__form--btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50914;
+}
+.wrapper .signup__form--bottom {
+  color: #ccc;
+}
+.wrapper .signup__form--text {
+  font-size: 13px;
+}
+.wrapper .signup__footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  align-items: center;
+  padding: 3rem;
+  margin-top: 5rem;
+}
+
+input:focus ~ .header__form--label, input:valid ~ .header__form--label {
+  font-size: 11px;
+  top: 3px;
+}/*# sourceMappingURL=signup.styles.css.map */

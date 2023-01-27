@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getApiData } from '../api/api';
 import { MOVIEDETAILS } from '../interface';
 import Hero from './hero';
+import SlidingSlides from './sliders/sliders';
 
 function Browse() {
   const [apiMovies, setApiMovies] = useState<Array<MOVIEDETAILS | null>>([]);
@@ -16,7 +17,10 @@ function Browse() {
     console.log(apiFunc());
   }, []);
   return (
-    <Hero data={apiMovies} />
+    <>
+      <Hero data={apiMovies} />
+      <SlidingSlides data={apiMovies} />
+    </>
   );
 }
 export default Browse;
