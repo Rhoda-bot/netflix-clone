@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 import { getApiData } from '../../api/api';
 import { MOVIEDETAILS } from '../../interface';
 import Footer from '../../reausables/footer';
@@ -20,29 +21,23 @@ function WatchMovie() {
     console.log(apiFunc());
   }, []);
 
-  console.log(videos);
+  // console.log(videos[1].key);
   return (
     <>
       <Header />
       <div className="watchs">
         <div className="container">
           <div className="row watchs__top ">
-            <h3 className="watchs__top--title">{(videos[1]?.title === null) ? 'Video title' : videos[1]?.title }</h3>
-            <div className="col-md-10">
-              <video
-                autoPlay
-                playsInline
-                muted
-                loop
-                style={{
-                  border: '2px solid white',
-                  borderRadius: '4px',
-                }}
-                src={(videos[1]?.key === undefined) ? '/assets/videos/vi.m4v' : `https://www.youtube.com/watch?v=${videos[1]?.key}`}
+            {/* <h3 className="watchs__top--title">{(videos[1]?.title === un
+              defined) ? 'Video title' : videos[1]?.title }</h3> */}
+            <div className="col-md-10 mt-3">
+              <ReactPlayer
+                className="react-player"
+                url={(videos[1]?.key === undefined) ? '/assets/videos/vi.m4v' : `https://www.youtube.com/watch?v=${videos[1]?.key}`}
                 width="100%"
-              >
-                {/* <source src={(videos[1]?.key === null) ? '' : `https://www.youtube.com/watch?v=${videos[1]?.key}`} /> */}
-              </video>
+                height="100vh"
+              />
+              {/* src={(videos[1]?.key === undefined) ? '/assets/videos/vi.m4v' : `https://www.youtube.com/watch?v=${videos[1]?.key}`} */}
             </div>
           </div>
         </div>
