@@ -2,10 +2,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/jsx-props-no-spreading */
 import Slider from 'react-slick';
+import Cards from './card';
 import './sliders.styles.scss';
-import SlidingCards from './slidingCard';
 
-function SampleNextArrow(props: any) {
+function SampleNextArrow(props: any, title: any) {
   const { className, style, onClick } = props;
   return (
     <div
@@ -29,11 +29,11 @@ function SamplePrevArrow(props: any) {
     </div>
   );
 }
-function SlidingSlides({ data }: any) {
+function SlidingSlides({ data, title }: any) {
   const settings = {
     className: 'center',
     infinite: true,
-    centerPadding: '60px',
+    centerPadding: '40px',
     dots: false,
     slidesToShow: 6,
     slidesToScroll: 0.5,
@@ -42,31 +42,29 @@ function SlidingSlides({ data }: any) {
   };
   return (
     <div
-      className="sliding py-5"
+      className="sliding py-2"
     >
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-12">
-            <div>
-              <div className="d-flex mb-5">
-                <h4>Swipe To Slide</h4>
-                <div className="mx-3 align-items-center mt-1">
+        <div className="row text-start">
+          <div>
+            <div className="d-flex mb-5">
+              <h4 className="sliding-title">{title}</h4>
+              <div className="mx-3 align-items-center mt-1">
+                {' '}
+                <b className="sliding--explore">
+                  Explore All
                   {' '}
-                  <b className="sliding--explore">
-                    Explore All
-                    {' '}
-                    <span className="sliding--chevron"><i className="fa-solid fa-chevron-right" /></span>
-                  </b>
-                  {' '}
+                  <span className="sliding--chevron"><i className="fa-solid fa-chevron-right" /></span>
+                </b>
+                {' '}
 
-                </div>
               </div>
-              <Slider {...settings}>
-                {data?.map((item: any) => (
-                  <SlidingCards key={item?.id} items={item} />
-                ))}
-              </Slider>
             </div>
+            <Slider {...settings}>
+              {data?.map((item: any) => (
+                <Cards key={item?.id} items={item} />
+              ))}
+            </Slider>
           </div>
         </div>
       </div>

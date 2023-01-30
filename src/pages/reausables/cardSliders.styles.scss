@@ -1,0 +1,36 @@
+.cards{
+    background-color: $black;
+    color: #ccc;
+    &__body{
+        height: 100%;
+        &--text{
+            font-size: 15px;
+            text-align: start;
+        }
+        &--new{
+            color: #46d369;
+            font-weight: 500;
+        }
+        &--age{
+            font-weight: 500;
+            border: 1px solid #ccc;
+            padding: .1rem .5rem;
+            // margin-left: 1rem;
+        }
+        &--year{
+            font-weight: 500; 
+        }
+        &--btn{
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50px;
+            background-color: rgba(42,42,42,.6);
+            border-color: hsla(0,0%,100%,.5);
+            border: 1px solid #fff;
+            border-radius: 50px;
+            & i{
+                color: green;
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ import Signup from './components/auth/signup';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/main.sass';
 import Browse from './pages/browse';
+import WatchMovie from './pages/browse/watch/watch';
 
 function RootComponent() {
   return (
@@ -17,6 +18,7 @@ function RootComponent() {
         <Route path={ROUTES.HOMEPAGE_ROUTE} element={<HomePage />} />
         <Route path="/auth/signin" element={<SignIn />} />
         <Route path="/browse" element={<Browse />} />
+        <Route path="/watch/:id" element={<WatchMovie />} />
         <Route path="/auth/signup" element={<Signup />} />
       </Routes>
     </Router>

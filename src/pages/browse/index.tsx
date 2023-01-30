@@ -15,19 +15,20 @@ function Browse() {
       return result;
     };
     console.log(apiFunc());
-    const apiFunc2 = async () => {
-      const result = await getApiData('https://api.themoviedb.org/3/discover/movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
-      setGetOneMovie(result.results);
-      return result;
-    };
-    console.log(apiFunc2());
+    // const apiFunc2 = async () => {
+    //   const result = await getApiData('discover/
+    // movie?api_key=a495d3cd0cf478c71fd3590344b481b9&');
+    //   setGetOneMovie(result.results);
+    //   return result;
+    // };
+    // console.log(apiFunc2());
   }, []);
   return (
     <>
       <Hero data={apiMovies} />
-      <SlidingSlides data={apiMovies} />
-      <SlidingSlides data={apiMovies} />
-      <SlidingSlides data={getOneMovie} />
+      <SlidingSlides data={apiMovies} title="My List" />
+      {/* <SlidingSlides data={apiMovies} title="Continue watching" />
+      <SlidingSlides data={getOneMovie} title="Others" /> */}
       <Footer />
     </>
   );

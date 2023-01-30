@@ -1,11 +1,9 @@
+import { NavLink } from 'react-router-dom';
 import './hero.styles.scss';
 import Header from './header';
-import ViewMoreMovieDescription from './modals/modalView';
 import Modals from './modals/modal';
 
 function Hero({ data }: any) {
-  console.log(data);
-
   return (
     <>
       <div
@@ -24,8 +22,9 @@ function Hero({ data }: any) {
                 <p className="hero__col--text">{data[9]?.overview}</p>
                 <div className="d-flex">
                   <button type="button" className="hero__col--btn me-2">
-                    <i className="fa-regular fa-play m-2" />
-                    Play
+                    <i className="fa-regular fa-play m-2">
+                      <NavLink to={`/watch/${data[9]?.id}`}>Play</NavLink>
+                    </i>
                   </button>
                   <button type="button" className="hero__col--btn me-2 hero__col--info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i className="fa-light fa-circle-info m-2" />
@@ -41,7 +40,6 @@ function Hero({ data }: any) {
           </div>
         </div>
       </div>
-      {/* <ViewMoreMovieDescription props={data} /> */}
       <Modals props={data} />
     </>
   );

@@ -1,6 +1,4 @@
-import Cards from '../sliders/card';
-import './modal.styles.scss';
-// import './modalView.styles.scss';
+import CardSlider from '../../reausables/cardSliders';
 
 function Modals({ props }: any) {
   return (
@@ -106,48 +104,12 @@ function Modals({ props }: any) {
                 <div className="row">
                   {
               props && props.filter((elts:any, index:number) => index < 6).map((items: any) => (
-                <div className="col-md-4 p-2" key={items.id}>
-                  <Cards item={items} />
+                <div className="col-md-4 col-xs-12 col-xl-4 p-2" key={items.id}>
+                  <CardSlider item={items} />
                 </div>
               ))
               }
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="modal-footer">
-            <div className="modal__about">
-              <div className="modal__more--header py-2 mt-2 mt-lg-3">
-                <h6>
-                  About
-                  {' '}
-                  {props[9]?.title}
-                  {' '}
-                </h6>
-              </div>
-              <div className="">
-                <p className="mb-0 mb-lg-3 modal__descriptionn--text">
-                  <span>Creators:</span>
-                  {' '}
-                  Steven Seagal, Micheal B. Jordan,
-                  Jamie Foxx, Denzel Washington, more
-                </p>
-                <p className="mb-0 mb-lg-3 modal__descriptionn--text">
-                  <span>Cast:</span>
-                  {' '}
-                  Steven Seagal, Micheal B. Jordan, Jamie
-                  Foxx, Denzel Washington, more
-                </p>
-                <p className="mb-0 mb-lg-3 modal__descriptionn--text">
-                  <span>Genre:</span>
-                  {' '}
-                  Movies, Action & Adventure
-                </p>
-                <p className="mb-0 mb-lg-3 modal__details--info">
-                  <span>This movie is:</span>
-                  {' '}
-                  Violent, Suspensful, Exciting
-                </p>
               </div>
             </div>
           </div>

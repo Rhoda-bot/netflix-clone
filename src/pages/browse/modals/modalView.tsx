@@ -1,4 +1,4 @@
-import Cards from '../sliders/card';
+import CardSlider from '../../reausables/cardSliders';
 import './modalView.styles.scss';
 
 function ViewMoreMovieDescription({ props }: any) {
@@ -133,7 +133,7 @@ function ViewMoreMovieDescription({ props }: any) {
               {
               props && props.filter((elts:any, index:number) => index < 6).map((items: any) => (
                 <div className="col-md-4 p-2" key={items.id}>
-                  <Cards item={items} />
+                  {/* <CardSlider /> */}
                 </div>
               ))
               }
