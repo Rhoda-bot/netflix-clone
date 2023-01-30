@@ -42,7 +42,7 @@ function SlidingSlides({ data, title }: any) {
   };
   return (
     <div
-      className="sliding py-2"
+      className="sliding py-1"
     >
       <div className="container-fluid">
         <div className="row text-start">

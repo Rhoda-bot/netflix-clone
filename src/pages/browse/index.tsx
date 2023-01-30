@@ -27,6 +27,8 @@ function Browse() {
     <>
       <Hero data={apiMovies} />
       <SlidingSlides data={apiMovies} title="My List" />
+      <SlidingSlides data={apiMovies} title="Continue watching" />
+      <SlidingSlides data={apiMovies} title="Latest" />
       {/* <SlidingSlides data={apiMovies} title="Continue watching" />
       <SlidingSlides data={getOneMovie} title="Others" /> */}
       <Footer />

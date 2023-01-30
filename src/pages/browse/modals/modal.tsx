@@ -101,15 +101,24 @@ function Modals({ props }: any) {
                 <div className="modal__more--header py-2">
                   <h6>More like this</h6>
                 </div>
-                <div className="row">
+                <div className="row row-cols-1 row-cols-md-2 g-4">
                   {
-              props && props.filter((elts:any, index:number) => index < 6).map((items: any) => (
-                <div className="col-md-4 col-xs-12 col-xl-4 p-2" key={items.id}>
+              props && props.filter((elts:any, index:number) => index < 3).map((items: any) => (
+                <div className="col p-2" key={items.id}>
                   <CardSlider item={items} />
                 </div>
               ))
               }
                 </div>
+              </div>
+              <div className="modal__bottom">
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quo itaque, voluptates facere in accusantium quis iusto quidem nisi modi
+                  voluptatem molestias laborum! Tenetur blanditiis quas
+                  placeat consequuntur ex, soluta velit.
+
+                </p>
               </div>
             </div>
           </div>

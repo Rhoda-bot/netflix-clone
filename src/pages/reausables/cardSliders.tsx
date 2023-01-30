@@ -1,9 +1,13 @@
 function CardSlider({ item }: any) {
   const { overview } = item;
+  const shortOverview = (text: string) => {
+    const str = text.substring(0, text.indexOf('.') + 1);
+    return str;
+  };
+
   return (
     <div className="">
-      <div className="card cards">
-        {/* <img src="/assets/kids.png" className="card-img-top" alt="" /> */}
+      <div className="card cards h-100">
         <img
           style={{
             objectFit: 'cover',
@@ -13,7 +17,7 @@ function CardSlider({ item }: any) {
           alt=""
           className="card-img-top"
         />
-        <div className="card-body cards__body p-2 h-100">
+        <div className="card-body cards__body  p-2 p-lg-3 h-100">
           <div className="row align-items-center">
             <div className="col-9">
               <span className="cards__body--new">New</span>
@@ -29,7 +33,7 @@ function CardSlider({ item }: any) {
             </div>
           </div>
           <p className="cards__body--text">
-            {overview && overview}
+            {shortOverview(overview)}
           </p>
         </div>
       </div>
